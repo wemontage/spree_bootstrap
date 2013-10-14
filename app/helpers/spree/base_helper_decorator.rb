@@ -14,5 +14,16 @@ module Spree
       crumb_list = content_tag(:ul, raw(crumbs.flatten.map{|li| li.mb_chars}.join), class: 'inline')
       content_tag(:nav, crumb_list, id: 'breadcrumbs', class: 'span12')
     end
+
+    def flash_messages(opts = {})
+      opts[:ignore_types] = [:commerce_tracking].concat(Array(opts[:ignore_types]) || [])
+
+      flash.each do |msg_type, text|
+        unless opts[:ignore_types].include?(msg_type)
+          concat(content_tag :div, text, class: "alert alert-#{msg_type}")
+        end
+      end
+      nil
+    end
   end
 end
