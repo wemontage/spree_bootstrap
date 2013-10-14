@@ -24,10 +24,10 @@
 
         <div class="links" data-hook="cart_buttons">
           <%= order_form.text_field :coupon_code, :size => 10, :placeholder => Spree.t(:coupon_code) %>
-          <%= button_tag :id => 'update-button' do %>
+          <%= button_tag :class => 'btn', :id => 'update-button' do %>
             <%= Spree.t(:update) %>
           <% end %>
-          <%= button_tag :id => 'checkout-link', :name => 'checkout' do %>
+          <%= button_tag :class => 'btn btn-primary', :id => 'checkout-link', :name => 'checkout' do %>
             <%= Spree.t(:checkout) %>
           <% end %>
         </div>
@@ -38,9 +38,9 @@
   <div id="empty-cart" data-hook>
     <%= form_tag spree.empty_cart_path, :method => :put do %>
       <p id="clear_cart_link" data-hook>
-        <%= submit_tag Spree.t(:empty_cart), :class => 'btn' %>
+        <%= submit_tag Spree.t(:empty_cart), :class => 'btn btn-danger' %>
         <%= Spree.t(:or) %>
-        <%= link_to Spree.t(:continue_shopping), spree.products_path, :class => 'button' %>
+        <%= link_to Spree.t(:continue_shopping), spree.products_path, :class => 'btn' %>
       </p>
     <% end %>
   </div>
