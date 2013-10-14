@@ -19,7 +19,6 @@
         </li>
       <% end %>
     </ul>
-    <br style="clear:both;" />
     <% if Spree::Promotion.with_code.count > 0 %>
       <p class='field' data-hook='coupon_code'>
         <%= form.label :coupon_code %><br />
@@ -32,6 +31,6 @@
 <br class="space" />
 
 <div class="form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn-primary' %>
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-primary' %>
   <script>Spree.disableSaveOnClick();</script>
 </div>
