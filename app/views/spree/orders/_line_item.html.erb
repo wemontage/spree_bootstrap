@@ -9,7 +9,7 @@
   <td class="cart-item-description" data-hook="cart_item_description">
     <h4><%= variant.product.name %></h4>
     <span class="line-item-description" data-hook="line_item_description">
-      <%= line_item_description(variant) %><br/>
+      <%= line_item_description_text(line_item.description) %><br/>
       <i><%= variant.options_text %></i>
     </span>
     <% if @order.insufficient_stock_lines.include? line_item %>
