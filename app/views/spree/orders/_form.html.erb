@@ -10,17 +10,9 @@
     </tr>
   </thead>
   <tbody id="line_items" data-hook>
-    <tr>
-      <td>
-        <%= order_form.fields_for :line_items do |item_form| %>
-          <table>
-            <tbody>
-              <%= render :partial => 'line_item', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } %>
-            </tbody>
-          </table>
-        <% end %>
-      </td>
-    </tr>
+    <%= order_form.fields_for :line_items, wrapper: false do |item_form| %>
+      <%= render :partial => 'line_item', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } %>
+    <% end %>
   </tbody>
   <%= render "spree/orders/adjustments" unless @order.adjustments.eligible.blank? %>
 </table>
