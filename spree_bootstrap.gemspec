@@ -19,7 +19,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap-sass', '~> 2.3.2'
   s.add_dependency 'font-awesome-rails'
   s.add_dependency 'spree_api'
-  s.add_dependency 'spree_core', '~> 2.2.0.beta'
+  #s.add_dependency 'spree_core', '~> 2.2.0.beta'
+  s.add_dependency 'spree_core'
   s.add_dependency 'spree_frontend'
 
   s.add_development_dependency 'capybara', '~> 2.1'
